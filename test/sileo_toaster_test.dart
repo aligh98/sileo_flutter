@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sileo_flutter/sileo_flutter.dart';
 
@@ -28,18 +28,28 @@ void main() {
     }) {
       return MediaQuery(
         data: MediaQueryData(size: size, disableAnimations: disableAnimations),
-        child: MaterialApp(
-          builder: (context, child) => Directionality(
-            textDirection: textDirection,
-            child: SileoToaster(
-              controller: controller,
-              position: position,
-              stackBehavior: stackBehavior,
-              surfaceStyle: surfaceStyle,
-              child: child!,
+        child: Directionality(
+          textDirection: textDirection,
+          child: WidgetsApp(
+            color: const Color(0xFF000000),
+            pageRouteBuilder: <T>(RouteSettings settings, WidgetBuilder builder) {
+              return PageRouteBuilder<T>(
+                settings: settings,
+                pageBuilder: (context, _, _) => builder(context),
+              );
+            },
+            builder: (context, child) => Directionality(
+              textDirection: textDirection,
+              child: SileoToaster(
+                controller: controller,
+                position: position,
+                stackBehavior: stackBehavior,
+                surfaceStyle: surfaceStyle,
+                child: child!,
+              ),
             ),
+            home: home,
           ),
-          home: home,
         ),
       );
     }
@@ -49,7 +59,7 @@ void main() {
     ) async {
       var buttonClicks = 0;
 
-      await tester.pumpWidget(wrapApp(home: const Scaffold(body: SizedBox.expand())));
+      await tester.pumpWidget(wrapApp(home: const SizedBox.expand()));
 
       controller.action(
         title: 'File Uploaded',
@@ -86,18 +96,17 @@ void main() {
 
       await tester.pumpWidget(
         wrapApp(
-          home: Scaffold(
-            body: Align(
-              alignment: Alignment.topRight,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 12, right: 260),
-                child: SizedBox(
-                  width: 80,
-                  height: 40,
-                  child: ElevatedButton(
-                    onPressed: () => backgroundTaps++,
-                    child: const Text('Under'),
-                  ),
+          home: Align(
+            alignment: Alignment.topRight,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 12, right: 260),
+              child: SizedBox(
+                width: 80,
+                height: 40,
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () => backgroundTaps++,
+                  child: const Center(child: Text('Under')),
                 ),
               ),
             ),
@@ -120,7 +129,7 @@ void main() {
     });
 
     testWidgets('supports tap-to-expand and vertical swipe-to-dismiss', (tester) async {
-      await tester.pumpWidget(wrapApp(home: const Scaffold(body: SizedBox.expand())));
+      await tester.pumpWidget(wrapApp(home: const SizedBox.expand()));
 
       controller.info(
         title: 'Update',
@@ -147,7 +156,7 @@ void main() {
     });
 
     testWidgets('hovering pauses auto-dismiss and leaving resumes it', (tester) async {
-      await tester.pumpWidget(wrapApp(home: const Scaffold(body: SizedBox.expand())));
+      await tester.pumpWidget(wrapApp(home: const SizedBox.expand()));
 
       controller.success(title: 'Hover Me', duration: const Duration(milliseconds: 1200));
       await tester.pump();
@@ -174,7 +183,7 @@ void main() {
     });
 
     testWidgets('morphs loading -> success via controller.future()', (tester) async {
-      await tester.pumpWidget(wrapApp(home: const Scaffold(body: SizedBox.expand())));
+      await tester.pumpWidget(wrapApp(home: const SizedBox.expand()));
 
       final completer = Completer<String>();
       unawaited(
@@ -210,7 +219,7 @@ void main() {
     });
 
     testWidgets('morphs expanded toast cleanly via collapse-before-swap', (tester) async {
-      await tester.pumpWidget(wrapApp(home: const Scaffold(body: SizedBox.expand())));
+      await tester.pumpWidget(wrapApp(home: const SizedBox.expand()));
 
       controller.success(
         title: 'First Toast',
@@ -255,7 +264,7 @@ void main() {
           disableAnimations: true,
           size: const Size(300, 640),
           stackBehavior: SileoStackBehavior.stack,
-          home: const Scaffold(body: SizedBox.expand()),
+          home: const SizedBox.expand(),
         ),
       );
 
@@ -285,10 +294,7 @@ void main() {
       var tapped = false;
 
       await tester.pumpWidget(
-        wrapApp(
-          surfaceStyle: SileoSurfaceStyle.liquidGlass,
-          home: const Scaffold(body: SizedBox.expand()),
-        ),
+        wrapApp(surfaceStyle: SileoSurfaceStyle.liquidGlass, home: const SizedBox.expand()),
       );
 
       controller.action(
@@ -319,7 +325,7 @@ void main() {
     });
 
     testWidgets('disposing immediately after firing a toast never throws', (tester) async {
-      await tester.pumpWidget(wrapApp(home: const Scaffold(body: SizedBox.expand())));
+      await tester.pumpWidget(wrapApp(home: const SizedBox.expand()));
 
       controller.success(title: 'Transient Toast', description: 'Removed on the very next frame.');
       await tester.pump();
