@@ -1,0 +1,45 @@
+# NOTE: When .pubignore exists, `dart pub` uses it INSTEAD of .gitignore.
+# Therefore all build, cache, IDE, and local tool files must be listed here.
+
+# Build & tool outputs (root and example)
+.dart_tool/
+**/build/
+build/
+.packages
+pubspec.lock
+**/pubspec.lock
+coverage/
+**/coverage/
+
+# IDE & OS metadata
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Android / Gradle local caches & secrets
+example/android/.gradle/
+example/android/.kotlin/
+example/android/local.properties
+example/android/gradlew
+example/android/gradlew.bat
+example/android/gradle/wrapper/gradle-wrapper.jar
+example/android/captures/
+example/android/.cxx/
+**/*.keystore
+**/*.jks
+**/key.properties
+example/.flutter-plugins-dependencies
+
+# CI workflows & heavy promo media not needed in the pub.dev tarball
+# (README.md loads all GIFs via raw.githubusercontent.com;
+#  media/hero_showcase.gif is kept for pubspec.yaml's screenshots gallery.)
+.github/
+media/twitter/
+media/liquid_glass_dark.gif
+media/liquid_glass_light.gif
+media/persian_rtl_glass.gif
+media/solid_and_glass.gif

@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `sileo_flutter` will be documented in this file.
+All notable changes to `sileo_glass` will be documented in this file.
 
 ## 0.1.0
 

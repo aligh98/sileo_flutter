@@ -3,7 +3,7 @@ import 'dart:math' as math;
 
 // ignore: deprecated_member_use
 import 'package:flutter/material.dart';
-import 'package:sileo_flutter/sileo_flutter.dart';
+import 'package:sileo_glass/sileo_glass.dart';
 
 void main() {
   runApp(const SileoPlaygroundApp());

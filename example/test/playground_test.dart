@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:sileo_flutter/sileo_flutter.dart';
-import 'package:sileo_flutter_example/main.dart';
+import 'package:sileo_glass/sileo_glass.dart';
+import 'package:sileo_glass_example/main.dart';
 
 void main() {
   testWidgets('Playground app launches and fires toasts cleanly', (

@@ -1,4 +1,4 @@
-name: sileo_flutter
+name: sileo_glass
 description: >-
   An opinionated, physics-based, gooey morphing toast notification library for
   Flutter with optional real-time GPU Liquid Glass, inspired by hiaaryan/sileo.
@@ -12,6 +12,12 @@ topics:
   - animation
   - liquid-glass
   - flutter
+
+screenshots:
+  - description: >-
+      Dark Liquid Glass, Light Liquid Glass, and Persian RTL showcase with
+      real-time GPU refraction and spring morphing.
+    path: media/hero_showcase.gif
 
 environment:
   sdk: ^3.10.0

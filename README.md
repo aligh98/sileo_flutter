@@ -1,17 +1,18 @@
 <div align="center">
 
-# sileo_flutter
+# sileo_glass
 
 **Physics-based, gooey morphing toast notifications for Flutter — with optional real-time GPU Liquid Glass.**
 
+[![pub package](https://img.shields.io/pub/v/sileo_glass.svg)](https://pub.dev/packages/sileo_glass)
 [![CI](https://github.com/aligh98/sileo_flutter/actions/workflows/ci.yml/badge.svg)](https://github.com/aligh98/sileo_flutter/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/aligh98/sileo_flutter/blob/main/LICENSE)
 
 Inspired by [hiaaryan/sileo](https://github.com/hiaaryan/sileo). Built for 120Hz smoothness, real spring physics, and native LTR/RTL support.
 
 <br />
 
-<img src="media/hero_showcase.gif" alt="sileo_flutter showcase — Dark Liquid Glass, Light Liquid Glass, and Persian RTL" width="760" />
+<img src="https://raw.githubusercontent.com/aligh98/sileo_flutter/main/media/hero_showcase.gif" alt="sileo_glass showcase — Dark Liquid Glass, Light Liquid Glass, and Persian RTL" width="760" />
 
 </div>
 
@@ -22,29 +23,29 @@ Inspired by [hiaaryan/sileo](https://github.com/hiaaryan/sileo). Built for 120Hz
 <table>
   <tr>
     <td align="center" width="25%">
-      <img src="media/liquid_glass_dark.gif" alt="Liquid Glass Dark Mode" width="210" /><br />
+      <img src="https://raw.githubusercontent.com/aligh98/sileo_flutter/main/media/liquid_glass_dark.gif" alt="Liquid Glass Dark Mode" width="210" /><br />
       <b>Liquid Glass · Dark</b><br />
-      <sub>Flight future, action & error morphs</sub>
+      <sub>Flight future, action &amp; error morphs</sub>
     </td>
     <td align="center" width="25%">
-      <img src="media/liquid_glass_light.gif" alt="Liquid Glass Light Mode" width="210" /><br />
+      <img src="https://raw.githubusercontent.com/aligh98/sileo_flutter/main/media/liquid_glass_light.gif" alt="Liquid Glass Light Mode" width="210" /><br />
       <b>Liquid Glass · Light</b><br />
-      <sub>Multi-position & upward expansion</sub>
+      <sub>Multi-position &amp; upward expansion</sub>
     </td>
     <td align="center" width="25%">
-      <img src="media/persian_rtl_glass.gif" alt="Persian RTL Liquid Glass" width="210" /><br />
+      <img src="https://raw.githubusercontent.com/aligh98/sileo_flutter/main/media/persian_rtl_glass.gif" alt="Persian RTL Liquid Glass" width="210" /><br />
       <b>RTL &amp; Custom Fonts</b><br />
       <sub>Vazirmatn Persian in Dark &amp; Light</sub>
     </td>
     <td align="center" width="25%">
-      <img src="media/solid_and_glass.gif" alt="Solid Default and Liquid Glass" width="210" /><br />
+      <img src="https://raw.githubusercontent.com/aligh98/sileo_flutter/main/media/solid_and_glass.gif" alt="Solid Default and Liquid Glass" width="210" /><br />
       <b>Solid (Default) → Glass</b><br />
       <sub>120Hz analytic gooey &amp; live toggle</sub>
     </td>
   </tr>
 </table>
 
-> **Note for X / Twitter:** Full 60fps H.264 promo clips matching these GIFs are included in [`media/twitter/`](media/twitter/).
+> **60fps Promo Clips:** Full 60fps H.264 showcase clips are available in [`media/twitter/`](https://github.com/aligh98/sileo_flutter/tree/main/media/twitter).
 
 ---
 
@@ -66,13 +67,21 @@ Inspired by [hiaaryan/sileo](https://github.com/hiaaryan/sileo). Built for 120Hz
 
 ## Installation
 
-Add `sileo_flutter` to your `pubspec.yaml`:
+```bash
+flutter pub add sileo_glass
+```
+
+Or add it to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  sileo_flutter:
-    git:
-      url: https://github.com/aligh98/sileo_flutter.git
+  sileo_glass: ^0.1.0
+```
+
+Import the package:
+
+```dart
+import 'package:sileo_glass/sileo_glass.dart';
 ```
 
 ## Getting Started
@@ -157,7 +166,7 @@ Sileo.info(
 
 - **Morph vs. Stack**: By default (`SileoStackBehavior.morph`), firing a new default toast smoothly morphs the active toast in place. Pass unique `id`s or set `stackBehavior: SileoStackBehavior.stack` to display multiple stacked toasts.
 - **Scoped Controllers**: Pass an explicit `SileoController` to `SileoToaster(controller: ...)` for isolated scopes and deterministic widget tests.
-- **RTL & Fonts**: `SileoToaster` automatically adapts to ambient `Directionality` (`TextDirection.rtl`) and `DefaultTextStyle` / `ThemeData.fontFamily` (see [`example/`](example/) for a complete Vazirmatn Persian RTL playground).
+- **RTL & Fonts**: `SileoToaster` automatically adapts to ambient `Directionality` (`TextDirection.rtl`) and `DefaultTextStyle` / `ThemeData.fontFamily` (see [`example/`](https://github.com/aligh98/sileo_flutter/tree/main/example) for a complete Vazirmatn Persian RTL playground).
 
 ---
 
@@ -166,5 +175,4 @@ Sileo.info(
 - Inspired by [hiaaryan/sileo](https://github.com/hiaaryan/sileo)
 - Optional Liquid Glass refraction powered by [`liquid_glass_easy`](https://pub.dev/packages/liquid_glass_easy)
 - Example Persian font: [Vazirmatn](https://github.com/rastikerdar/vazirmatn) (OFL-1.1)
-- Licensed under the [MIT License](LICENSE)
-
+- Licensed under the [MIT License](https://github.com/aligh98/sileo_flutter/blob/main/LICENSE)

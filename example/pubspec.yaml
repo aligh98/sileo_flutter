@@ -1,15 +1,15 @@
-name: sileo_flutter_example
-description: Interactive Playground demonstrating sileo_flutter physics-based gooey toasts.
+name: sileo_glass_example
+description: Interactive Playground demonstrating sileo_glass physics-based gooey & liquid glass toasts.
 publish_to: none
 
 environment:
   sdk: ^3.10.0
-  flutter: ">=3.24.0"
+  flutter: ">=3.27.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  sileo_flutter:
+  sileo_glass:
     path: ../
 
 dev_dependencies:

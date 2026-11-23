@@ -1,6 +1,6 @@
-# sileo_flutter Playground
+# sileo_glass Playground
 
-Interactive demo app showcasing `sileo_flutter` across all 6 viewport positions, Solid (120Hz analytic gooey) and real-time GPU Liquid Glass surfaces, Light/Dark themes, Morph/Stack modes, custom animated widgets (`Flight Future`), and Persian RTL layout.
+Interactive demo app showcasing `sileo_glass` across all 6 viewport positions, Solid (120Hz analytic gooey) and real-time GPU Liquid Glass surfaces, Light/Dark themes, Morph/Stack modes, custom animated widgets (`Flight Future`), and Persian RTL layout.
 
 ## Running
 

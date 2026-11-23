@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:sileo_flutter/sileo_flutter.dart';
+import 'package:sileo_glass/sileo_glass.dart';
 
 void main() {
   group('buildSileoGooeyPath', () {
