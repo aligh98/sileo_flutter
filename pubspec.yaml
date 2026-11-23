@@ -1,0 +1,30 @@
+name: sileo_flutter
+description: >-
+  An opinionated, physics-based, gooey morphing toast notification library for
+  Flutter with optional real-time GPU Liquid Glass, inspired by hiaaryan/sileo.
+version: 0.1.0
+homepage: https://github.com/aligh98/sileo_flutter
+repository: https://github.com/aligh98/sileo_flutter
+issue_tracker: https://github.com/aligh98/sileo_flutter/issues
+topics:
+  - toast
+  - notifications
+  - animation
+  - liquid-glass
+  - flutter
+
+environment:
+  sdk: ^3.10.0
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  liquid_glass_easy: ">=5.0.0 <5.1.0"
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
